@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이현주 | 주식회사 지담 (JIDAM)</title>
+  <meta name="description" content="주식회사 지담 이현주의 모바일 웹 명함입니다.">
+
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- 배경 데코레이션 요소 -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-grid"></div>
+
+  <main class="container">
+    <!-- 카드 래퍼 (3D 효과용) -->
+    <div class="card-wrapper" id="cardWrapper">
+      <div class="card" id="businessCard">
+
+        <!-- 카드 상단: 회사 로고 & 배지 -->
+        <header class="card-header">
+          <div class="company-brand">
+            <!-- JIDAM SVG 심플 로고 -->
+            <div class="logo-mark" aria-label="JIDAM Logo">
+              <svg viewBox="0 0 100 100" class="jidam-svg-logo" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="jidamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#4F46E5" />
+                    <stop offset="50%" stop-color="#6366F1" />
+                    <stop offset="100%" stop-color="#06B6D4" />
+                  </linearGradient>
+                  <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#F59E0B" />
+                    <stop offset="100%" stop-color="#FBBF24" />
+                  </linearGradient>
+                </defs>
+                <!-- 프레임 (담다의 의미를 가진 모던 스퀘어 헥사곤) -->
+                <rect x="12" y="12" width="76" height="76" rx="22" fill="none" stroke="url(#jidamGrad)"
+                  stroke-width="4.5" opacity="0.85" />
+                <!-- J와 D가 만나는 미니멀 모노그램 -->
+                <path d="M38 32 H52 V64 C52 71 44 72 38 67" fill="none" stroke="url(#jidamGrad)" stroke-width="5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M52 38 C68 38 72 50 72 52 C72 62 64 66 52 66" fill="none" stroke="url(#jidamGrad)"
+                  stroke-width="5" stroke-linecap="round" />
+                <!-- 포인트 액센트 닷 (혁신과 비전의 불꽃) -->
+                <circle cx="68" cy="32" r="5" fill="url(#accentGrad)" />
+              </svg>
+            </div>
+            <div class="company-text">
+              <span class="en-name">JIDAM</span>
+              <span class="ko-name">주식회사 지담</span>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button id="themeToggleBtn" class="icon-btn" title="테마 변경" aria-label="테마 변경">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+            <button id="shareBtn" class="icon-btn" title="명함 공유" aria-label="명함 공유">
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- 프로필 섹션 -->
+        <section class="profile-section">
+          <!-- 프로필 섹션 -->
+          <section class="profile-section">
+            <div class="avatar-container">
+              <div class="avatar-ring">
+                <!-- 60대 여성 캐릭터 아바타 (단정한 갈색 단발머리, 세련된 안경, 온화한 인상) -->
+                <div class="avatar-character">
+                  <svg viewBox="0 0 120 120" class="character-svg" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <!-- 배경 그라데이션 -->
+                      <radialGradient id="avatarBgGrad" cx="50%" cy="40%" r="60%">
+                        <stop offset="0%" stop-color="#312e81" />
+                        <stop offset="100%" stop-color="#1e1b4b" />
+                      </radialGradient>
+                      <!-- 갈색 머리 그라데이션 -->
+                      <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#804a26" />
+                        <stop offset="40%" stop-color="#5c3418" />
+                        <stop offset="100%" stop-color="#3b1f0c" />
+                      </linearGradient>
+                      <!-- 머리 하이라이트 -->
+                      <linearGradient id="hairHighlight" x1="0%" y1="0%" x2="100%" y2="50%">
+                        <stop offset="0%" stop-color="#a0633b" />
+                        <stop offset="50%" stop-color="#b8784c" />
+                        <stop offset="100%" stop-color="#7a421e" />
+                      </linearGradient>
+                      <!-- 피부 톤 (주름 없이 화사하고 매끄러운 톤) -->
+                      <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#fff1eb" />
+                        <stop offset="100%" stop-color="#fed7aa" />
+                      </linearGradient>
+                      <!-- 의상 그라데이션 -->
+                      <linearGradient id="clothesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#4f46e5" />
+                        <stop offset="100%" stop-color="#312e81" />
+                      </linearGradient>
+                      <!-- 안경 골드/브라운 메탈 -->
+                      <linearGradient id="glassesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#f59e0b" />
+                        <stop offset="100%" stop-color="#d97706" />
+                      </linearGradient>
+                    </defs>
+
+                    <!-- 내부 원형 배경 -->
+                    <circle cx="60" cy="60" r="58" fill="url(#avatarBgGrad)" />
+
+                    <!-- 뒷머리 단발 볼륨 (풍성한 갈색 단발) -->
+                    <path
+                      d="M26 56 C22 35 34 16 60 16 C86 16 98 35 94 56 C92 73 87 86 80 88 C76 89 74 80 72 75 C48 75 46 89 40 88 C33 86 28 73 26 56 Z"
+                      fill="url(#hairGrad)" />
+
+                    <!-- 목 -->
+                    <path d="M51 68 L51 86 C51 90 69 90 69 86 L69 68 Z" fill="#fed7aa" />
+                    <!-- 목 그림자 -->
+                    <path d="M51 68 C56 73 64 73 69 68 L69 72 C64 77 56 77 51 72 Z" fill="#fbcfe8" opacity="0.35" />
+
+                    <!-- 옷 (단정한 비즈니스 재킷/이너) -->
+                    <path d="M28 118 C30 96 42 88 51 86 L60 97 L69 86 C78 88 90 96 92 118 Z" fill="url(#clothesGrad)" />
+                    <!-- 이너 셔츠/카라 -->
+                    <path d="M51 86 L60 98 L69 86 L60 89 Z" fill="#ffffff" opacity="0.95" />
+                    <!-- 심플 골드 팬던트 -->
+                    <circle cx="60" cy="101" r="2.2" fill="#fbbf24" />
+
+                    <!-- 얼굴형 (주름 없이 매끄럽고 단아한 턱선) -->
+                    <path d="M37 50 C37 38 45 32 60 32 C75 32 83 38 83 50 C83 67 74 76 60 76 C46 76 37 67 37 50 Z"
+                      fill="url(#skinGrad)" />
+
+                    <!-- 귀 -->
+                    <circle cx="37" cy="53" r="5" fill="#fecba1" />
+                    <circle cx="83" cy="53" r="5" fill="#fecba1" />
+                    <!-- 귀걸이 (단아한 진주 귀걸이) -->
+                    <circle cx="36" cy="57" r="2.2" fill="#ffffff" />
+                    <circle cx="84" cy="57" r="2.2" fill="#ffffff" />
+
+                    <!-- 눈썹 (부드럽고 자연스러운 브라운) -->
+                    <path d="M44 43 C46 41 50 41 53 43" stroke="#683b1c" stroke-width="2" stroke-linecap="round"
+                      fill="none" />
+                    <path d="M67 43 C70 41 74 41 76 43" stroke="#683b1c" stroke-width="2" stroke-linecap="round"
+                      fill="none" />
+
+                    <!-- 눈 (온화하고 따뜻한 미소의 눈매) -->
+                    <path d="M45 49 C47 47 51 47 53 49" stroke="#3b1f0c" stroke-width="2.2" stroke-linecap="round"
+                      fill="none" />
+                    <circle cx="49" cy="50" r="1.6" fill="#291407" />
+
+                    <path d="M67 49 C69 47 73 47 75 49" stroke="#3b1f0c" stroke-width="2.2" stroke-linecap="round"
+                      fill="none" />
+                    <circle cx="71" cy="50" r="1.6" fill="#291407" />
+
+                    <!-- 발그레한 볼터치 (생기 있고 건강한 느낌) -->
+                    <ellipse cx="44" cy="56" rx="4" ry="2.5" fill="#f43f5e" opacity="0.2" />
+                    <ellipse cx="76" cy="56" rx="4" ry="2.5" fill="#f43f5e" opacity="0.2" />
+
+                    <!-- 코 (작고 부드러운 라인) -->
+                    <path d="M58 54 C59 56 61 56 62 54" stroke="#e09f67" stroke-width="1.8" stroke-linecap="round"
+                      fill="none" />
+
+                    <!-- 입술 (인자하고 다정한 미소) -->
+                    <path d="M53 64 C56 68 64 68 67 64" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round"
+                      fill="none" />
+
+                    <!-- 안경 (세련된 라운드 메탈 안경테) -->
+                    <!-- 안경 브릿지 (코받침 연결) -->
+                    <path d="M55 49 C57 47.5 63 47.5 65 49" stroke="url(#glassesGrad)" stroke-width="1.8" fill="none" />
+                    <!-- 좌측 렌즈 테 -->
+                    <ellipse cx="48.5" cy="49.5" rx="7.8" ry="7" fill="rgba(255,255,255,0.18)"
+                      stroke="url(#glassesGrad)" stroke-width="1.9" />
+                    <!-- 우측 렌즈 테 -->
+                    <ellipse cx="71.5" cy="49.5" rx="7.8" ry="7" fill="rgba(255,255,255,0.18)"
+                      stroke="url(#glassesGrad)" stroke-width="1.9" />
+                    <!-- 안경테 다리 연결부 -->
+                    <path d="M37 49 L41 49" stroke="url(#glassesGrad)" stroke-width="1.8" stroke-linecap="round" />
+                    <path d="M79 49 L83 49" stroke="url(#glassesGrad)" stroke-width="1.8" stroke-linecap="round" />
+                    <!-- 렌즈 빛 반사 하이라이트 -->
+                    <path d="M44 46 L46 44" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity="0.6" />
+                    <path d="M67 46 L69 44" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity="0.6" />
+
+                    <!-- 앞머리 및 옆머리 단발 헤어라인 (볼륨감 있는 브라운 단발) -->
+                    <!-- 좌측 앞머리 -->
+                    <path
+                      d="M34 40 C36 26 48 20 60 20 C64 20 67 21 70 23 C62 25 52 30 46 36 C41 42 38 48 36 56 C34 50 33 44 34 40 Z"
+                      fill="url(#hairHighlight)" />
+                    <!-- 우측 넘김 단발머리 -->
+                    <path d="M66 21 C76 23 84 28 86 38 C88 47 87 56 84 64 C83 55 83 44 79 38 C75 32 68 28 66 21 Z"
+                      fill="url(#hairGrad)" />
+                    <!-- 정수리/이마 부드러운 헤어 결 -->
+                    <path d="M46 25 C54 22 66 23 72 26" stroke="#9a5a32" stroke-width="1.5" stroke-linecap="round"
+                      fill="none" opacity="0.7" />
+                    <!-- 옆단발 볼륨 실루엣 -->
+                    <path d="M35 55 C34 65 37 74 41 78 C38 74 36 67 36 60 Z" fill="url(#hairGrad)" />
+                    <path d="M85 55 C86 65 83 74 79 78 C82 74 84 67 84 60 Z" fill="url(#hairGrad)" />
+                  </svg>
+                </div>
+              </div>
+              <span class="status-indicator" title="연락 가능"></span>
+            </div>
+
+            <div class="name-group">
+              <div class="title-badge">대표 / 비즈니스 디렉터</div>
+              <h1 class="person-name">이현주 <span class="en-sub">Hyunju Lee</span></h1>
+            </div>
+
+            <!-- 한 줄 소개 -->
+            <div class="quote-box">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="tagline">신뢰와 가치를 담아 더 나은 미래를 함께 만듭니다.</p>
+            </div>
+          </section>
+
+          <!-- 연락처 & 상세 정보 목록 -->
+          <section class="contact-section">
+            <!-- 전화번호 -->
+            <div class="contact-card">
+              <div class="contact-icon phone">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <span class="label">연락처</span>
+                <a href="tel:010-3412-6530" class="value" id="phoneText">010-3412-6530</a>
+              </div>
+              <div class="card-btn-group">
+                <a href="tel:010-3412-6530" class="quick-btn" title="전화 걸기">
+                  <i class="fa-solid fa-phone"></i>
+                </a>
+                <button class="quick-btn copy-btn" data-copy="010-3412-6530" title="번호 복사">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- 이메일 -->
+            <div class="contact-card">
+              <div class="contact-icon email">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <span class="label">이메일</span>
+                <a href="mailto:jidam2026@gmail.com" class="value" id="emailText">jidam2026@gmail.com</a>
+              </div>
+              <div class="card-btn-group">
+                <a href="mailto:jidam2026@gmail.com" class="quick-btn" title="메일 보내기">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </a>
+                <button class="quick-btn copy-btn" data-copy="jidam2026@gmail.com" title="이메일 복사">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- 회사 / 위치 -->
+            <div class="contact-card">
+              <div class="contact-icon company">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <div class="contact-details">
+                <span class="label">소속</span>
+                <span class="value static">주식회사 지담 (JIDAM Inc.)</span>
+              </div>
+              <div class="card-btn-group">
+                <button class="quick-btn copy-btn" data-copy="주식회사 지담" title="회사명 복사">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 하단 액션 버튼 모음 -->
+          <footer class="card-footer">
+            <button id="saveVcardBtn" class="action-btn primary-btn">
+              <i class="fa-solid fa-address-book"></i>
+              <span>연락처에 저장 (.vcf)</span>
+            </button>
+
+            <button id="showQrBtn" class="action-btn secondary-btn">
+              <i class="fa-solid fa-qrcode"></i>
+              <span>QR 코드</span>
+            </button>
+          </footer>
+
+          <!-- 카드 하단 장식선 및 워터마크 -->
+          <div class="card-watermark">
+            <span>CONNECT WITH JIDAM</span>
+          </div>
+
+      </div>
+    </div>
+
+    <p class="guide-hint">💡 스마트폰 또는 PC 어디서든 최적화된 화면으로 확인하실 수 있습니다.</p>
+  </main>
+
+  <!-- QR 모달 -->
+  <div class="modal-backdrop" id="qrModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close-modal" id="closeQrModal" aria-label="닫기">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="qr-content">
+        <h3>디지털 명함 QR코드</h3>
+        <p>스마트폰 카메라로 스캔하여 명함을 확인하세요.</p>
+        <div class="qr-image-wrapper">
+          <img id="qrImage" alt="JIDAM 이현주 웹 명함 QR코드" />
+        </div>
+        <div class="qr-info">
+          <span class="qr-name">이현주 | 주식회사 지담</span>
+          <span class="qr-tel">010-3412-6530</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 토스트 알림 메시지 -->
+  <div class="toast" id="toast" role="alert">클립보드에 복사되었습니다!</div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
